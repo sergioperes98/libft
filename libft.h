@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:00:34 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/02 17:22:57 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/11/03 18:06:46 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *src, size_t n);
 
 #endif
