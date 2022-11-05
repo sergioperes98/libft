@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 19:19:58 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/04 15:54:03 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/11/04 21:57:27 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/11/04 23:55:25 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] && i < (size - 1))
+	while (s[i])
 	{
-		dst[i] = src[i];
+		if (s[i] == c)
+			return ((char *)(&s[i]));
 		i++;
 	}
-	dst[i] = '\0';
-	return (ft_strlen(src));
+	if (c == '\0')
+		return(0);
+	return (NULL);
+}
+
+int	main(void)
+{
+	char	str[] = "Ola42\0SouEu";
+	int		c = '\0';
+
+	printf("%s\n", ft_strchr(str, c));
+	//printf("%s", strchr(str, c));
+	return (0);
 }

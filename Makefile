@@ -6,7 +6,7 @@
 #    By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 14:38:51 by svilaca-          #+#    #+#              #
-#    Updated: 2022/11/03 18:07:23 by svilaca-         ###   ########.fr        #
+#    Updated: 2022/11/04 22:44:43 by svilaca-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ RM = rm -f
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
       ft_isascii.c ft_isprint.c ft_strlen.c\
 	  ft_memset.c ft_bzero.c ft_memcpy.c\
-	  ft_memmove.c
+	  ft_memmove.c ft_strlcpy.c ft_strlcat.c\
+	  ft_toupper.c ft_tolower.c ft_strchr.c
 
 OBJ = $(SRC:.c=.o)
 
