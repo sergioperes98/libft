@@ -1,29 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 21:57:27 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/06 00:47:21 by svilaca-         ###   ########.fr       */
+/*   Created: 2022/11/06 02:51:01 by svilaca-          #+#    #+#             */
+/*   Updated: 2022/11/06 07:29:39 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
+	size_t	i;
+	const char	*ptr1;
+	const char	*ptr2;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (i < len)
 	{
-		if (s[i] == (unsigned char)c)
-			return ((char *)(&s[i]));
+		ptr1 = big;
+		ptr2 = little;
+		while (*ptr1 == *ptr2)
+		{
+			if (! *ptr2)
+				return ((char *)big);
+			ptr1++;
+			ptr2++;
+		}
+		big++;
 		i++;
 	}
-	if (s[i] == (unsigned char)c)
-		return ((char *)(&s[i]));
 	return (NULL);
+}
+
+int	main(void)
+{
+	// const char	big[] = "Ol42SouuuOla423Eu";
+	// const char	little[] = "uOla423Eu";
+
+	printf("%s", ft_strnstr("lorem ipsum dolor sit amet", "ipsum", 30));
+	return (0);
 }
