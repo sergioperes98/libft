@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:00:34 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/06 04:26:14 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/11/07 21:22:30 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
+
+// FROM <stdlib.h>
+int		ft_atoi(const char *nptr);
 
 #endif

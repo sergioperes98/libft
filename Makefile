@@ -6,7 +6,7 @@
 #    By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 14:38:51 by svilaca-          #+#    #+#              #
-#    Updated: 2022/11/06 04:26:38 by svilaca-         ###   ########.fr        #
+#    Updated: 2022/11/07 21:00:02 by svilaca-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	  ft_memmove.c ft_strlcpy.c ft_strlcat.c\
 	  ft_toupper.c ft_tolower.c ft_strchr.c\
 	  ft_strrchr.c ft_strncmp.c ft_memchr.c\
-	  ft_memcmp.c ft_strnstr.c
+	  ft_memcmp.c ft_strnstr.c ft_atoi.c\
 
 OBJ = $(SRC:.c=.o)
 
