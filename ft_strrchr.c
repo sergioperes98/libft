@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: svilaca- <svilaca-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 18:15:36 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/06 02:09:21 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/11/15 22:39:52 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (aux);
 }
-
-/*int	main(void)
-{
-	char	str[] = "Ola42So4uEu";
-	int		c = '4';
-
-	printf("(%s)", ft_strchr_1(str, c));
-	printf("\n(%s)", strchr(str, c));
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:00:34 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/13 16:32:53 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/11/13 19:39:46 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 // ADDITIONAL
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
 #endif
