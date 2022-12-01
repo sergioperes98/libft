@@ -6,7 +6,7 @@
 #    By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 14:38:51 by svilaca-          #+#    #+#              #
-#    Updated: 2022/11/23 20:05:03 by svilaca-         ###   ########.fr        #
+#    Updated: 2022/12/01 19:04:40 by svilaca-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,20 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	  ft_memcmp.c ft_strnstr.c ft_atoi.c\
 	  ft_calloc.c ft_strdup.c ft_substr.c\
 	  ft_strjoin.c ft_strtrim.c ft_split.c\
-	  ft_putchar_fd.c ft_putstr_fd.c ft_itoa.c\
-	  ft_strmapi.c 
+	  ft_itoa.c ft_strmapi.c ft_striteri.c\
+	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
+	  ft_putnbr_fd.c
+
+BON = ft_lstnew.c
 
 OBJ = $(SRC:.c=.o)
 
+B_OBJ = $(BON:.c=.o)
+
 all:	$(NAME)
+
+bonus:	$(B_OBJ)
+			ar rcs $(NAME) $(B_OBJ)
 
 $(NAME):	$(OBJ)
 			ar rcs $(NAME) $(OBJ)

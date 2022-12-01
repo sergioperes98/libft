@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:28:57 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/23 21:36:55 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:03:58 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int				len;
+	unsigned int	len;
 	unsigned int	i;
 	char			*str;
 
@@ -30,16 +30,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[len] = 0;
 	return (str);
 }
-
-// char f(unsigned int i, char c)
-// {
-//	(void) i;
-// 	c = c + 1;
-// 	return (c);
-// }
-
-// int	main(void)
-// {
-// 	printf("%s", ft_strmapi("ABC", f));
-// 	return (0);
-// }
