@@ -6,7 +6,7 @@
 #    By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/02 14:38:51 by svilaca-          #+#    #+#              #
-#    Updated: 2022/12/01 19:04:40 by svilaca-         ###   ########.fr        #
+#    Updated: 2022/12/02 18:31:03 by svilaca-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c\
 	  ft_putnbr_fd.c
 
-BON = ft_lstnew.c
+BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+      ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c\
+	  ft_lstclear.c
 
 OBJ = $(SRC:.c=.o)
 
