@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 16:52:58 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/22 17:31:51 by svilaca-         ###   ########.fr       */
+/*   Updated: 2022/12/04 20:16:48 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,40 +28,53 @@ static size_t	word_count(char const *s, char c)
 	return (wd);
 }
 
-static void	str_malloc(char **arr, char const *s, char c, size_t wd)
+static size_t	string_len(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
+	size_t	len;
 
-	i = 0;
-	while (s[i] && wd > 0)
+	len = 0;
+	while (*s != c && *s)
 	{
-		if (s[i] != c)
-		{
-			j = 0;
-			while (s[i] != c && s[i] != '\0')
-			{
-				j++;
-				i++;
-			}
-			*arr = ft_substr(s, i - j, j);
-			arr++;
-			wd--;
-		}
-		i++;
+		len++;
+		s++;
 	}
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	wd;
+	size_t	j;
+	size_t	i;
 
+	j = -1;
+	i = 0;
 	wd = word_count(s, c);
 	arr = (char **)malloc((wd + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	str_malloc(arr, s, c, wd);
+	while (++j < wd)
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+			arr[j] = ft_substr(s, i, string_len(&s[i], c));
+		while (s[i] && s[i] != c)
+			i++;
+	}
 	arr[wd] = NULL;
 	return (arr);
 }
+
+// int	main(void)
+// {
+// 	char const	*s = "ololl lll";
+// 	char		**arr = ft_split(s, ' ');
+// 	while (*arr)
+// 	{
+// 		printf("%s\n", *arr);
+// 		arr++;
+// 	}
+// 	return (0);
+// }
