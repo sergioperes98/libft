@@ -6,7 +6,7 @@
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:25:47 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/11/07 21:22:19 by svilaca-         ###   ########.fr       */
+/*   Updated: 2023/03/31 22:28:41 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,9 @@ int	ft_atoi(const char *nptr)
 	}
 	return (res * j);
 }
+
+// int	main(void)
+// {
+// 	printf("%d", ft_atoi("-123"));
+// 	return (0);
+// }

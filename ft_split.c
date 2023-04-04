@@ -1,80 +1,60 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   recursive_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svilaca- <svilaca-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/16 16:52:58 by svilaca-          #+#    #+#             */
-/*   Updated: 2022/12/04 20:16:48 by svilaca-         ###   ########.fr       */
+/*   Created: 2023/04/01 19:07:15 by svilaca-          #+#    #+#             */
+/*   Updated: 2023/04/04 17:49:12 by svilaca-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	word_count(char const *s, char c)
-{
-	int		i;
-	size_t	wd;
-
-	i = 0;
-	wd = 0;
-	while (s[i])
-	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-			wd++;
-		i++;
-	}
-	return (wd);
-}
-
-static size_t	string_len(char const *s, char c)
-{
-	size_t	len;
-
-	len = 0;
-	while (*s != c && *s)
-	{
-		len++;
-		s++;
-	}
-	return (len);
-}
+// void	*malloc(size_t size)
+// {
+// 	(void)size;
+// 	return (NULL);
+// }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**arr;
-	size_t	wd;
-	size_t	j;
-	size_t	i;
+	char		**arr;
+	static int	wd;
+	int			i;
 
-	j = -1;
 	i = 0;
-	wd = word_count(s, c);
-	arr = (char **)malloc((wd + 1) * sizeof(char *));
+	if (!s)
+		return (NULL);
+	while (*s == c && *s)
+		s++;
+	while (s[i] != c && s[i] != '\0')
+		i++;
+	if (++wd && *s == '\0')
+	{
+		arr = malloc(wd * sizeof(char *));
+		if (arr)
+			arr[--wd] = NULL;
+		return (arr);
+	}
+	arr = ft_split(s + i, c);
 	if (!arr)
 		return (NULL);
-	while (++j < wd)
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] && s[i] != c)
-			arr[j] = ft_substr(s, i, string_len(&s[i], c));
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	arr[wd] = NULL;
+	arr[--wd] = malloc((i + 1) * sizeof(char));
+	arr[wd][i] = '\0';
+	while (i-- > 0)
+		arr[wd][i] = *(s + i);
 	return (arr);
 }
 
 // int	main(void)
 // {
-// 	char const	*s = "ololl lll";
-// 	char		**arr = ft_split(s, ' ');
-// 	while (*arr)
-// 	{
-// 		printf("%s\n", *arr);
-// 		arr++;
-// 	}
+// 	char	**arr;
+// 	char	*str = "  Ola42 Sou Eu ";
+
+// 	arr = ft_split(str, ' ');
+// 	while (arr && *arr)
+// 		printf("%s\n", *arr++);
 // 	return (0);
 // }
